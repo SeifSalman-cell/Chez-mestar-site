@@ -393,6 +393,10 @@
       font-size: 15px;
     }
 
+    .mobile-bar {
+      display: none;
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .menu-grid,
@@ -432,16 +436,189 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 14px 0;
+      }
+
+      .brand h1 {
+        font-size: 30px;
+      }
+
+      .brand p {
+        font-size: 14px;
+      }
+
+      .contact-top {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .hero {
+        padding: 20px 0 18px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .hero-text {
+        padding: 22px;
+        border-radius: 20px;
+      }
+
+      .hero-badge {
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+
+      .hero-text h2 {
+        font-size: 30px;
+        line-height: 1.15;
+      }
+
+      .hero-text p {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 14px 18px;
+      }
+
+      .hero-visual {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 12px;
+      }
+
+      .hero-visual .big,
+      .hero-visual img {
+        height: 200px;
+      }
+
+      .section-head h3 {
+        font-size: 30px;
+      }
+
+      .section-head p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .menu-nav {
+        gap: 10px;
+      }
+
+      .menu-nav a {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
+
+      .menu-section {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .menu-section h4 {
+        font-size: 24px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item {
+        padding: 16px;
+        border-radius: 16px;
+      }
+
+      .menu-top {
+        align-items: flex-start;
+      }
+
+      .menu-name {
+        font-size: 18px;
+      }
+
+      .menu-price {
+        font-size: 18px;
+      }
+
+      .menu-desc {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .gallery,
+      .reviews,
+      .cta {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .gallery-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img,
+      .review-image img {
+        height: 220px;
+      }
+
+      footer {
+        padding-bottom: 90px;
+      }
+
+      .mobile-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(6, 49, 76, 0.96);
+        border-top: 1px solid rgba(224,184,79,0.25);
+        z-index: 999;
+      }
+
+      .mobile-bar a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding: 14px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        border-right: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .mobile-bar a:last-child {
+        border-right: none;
+      }
+    }
+
     @media (max-width: 680px) {
-      .brand h1 { font-size: 34px; }
-      .hero-text { padding: 28px; }
-      .hero-text h2 { font-size: 36px; }
-      .hero-text p, .section-head p, .cta p { font-size: 16px; }
-      .section-head h3, .gallery h4, .reviews h4, .cta h4 { font-size: 30px; }
-      .menu-section h4 { font-size: 28px; }
-      .menu-name { font-size: 18px; }
-      .menu-price { font-size: 18px; }
-      .review-image img { height: 260px; }
+      .brand h1 { font-size: 28px; }
+      .hero-text h2 { font-size: 28px; }
+      .section-head h3,
+      .gallery h4,
+      .reviews h4,
+      .cta h4 { font-size: 28px; }
+      .menu-section h4 { font-size: 24px; }
+      .review-image img { height: 240px; }
     }
   </style>
 </head>
@@ -452,7 +629,7 @@
       <div class="container topbar-inner">
         <div class="brand">
           <h1>Chez Mestar</h1>
-          <p>Restaurant libanais authentique</p>
+          <p>Restaurant Libanais authentique</p>
         </div>
         <div class="contact-top">
           152 Bd de la Croix-Rousse, 69001 Lyon<br>
@@ -465,10 +642,10 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <span class="hero-badge">Saveurs maison</span>
-          <h2>Une cuisine libanaise élégante, généreuse et pleine de goût.</h2>
+          <h2>Une cuisine Libanaise élégante, généreuse et pleine de goût.</h2>
           <p>
-            Découvrez les spécialités de Chez Mestar dans une ambiance raffinée :
-            mezzés, plats, bowls, galettes, boissons, cocktails maison et douceurs.
+            Découvrez les spécialités dans une ambiance raffinée :
+            mezzés, plats, bowls, galettes, boissons, cocktails et douceurs.
           </p>
           <div class="hero-actions">
             <a href="#menu" class="btn btn-primary">Voir le menu</a>
@@ -523,9 +700,9 @@
       <section class="menu-section" id="plats">
         <h4>Plats</h4>
         <div class="menu-grid">
-          <div class="menu-item"><div class="menu-top"><div class="menu-name">Poulet (Tawook)</div><div class="menu-price">17,50 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, poulet grillé.</div></div>
-          <div class="menu-item"><div class="menu-top"><div class="menu-name">Bœuf (Shawarma)</div><div class="menu-price">17,50 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, bœuf grillé.</div></div>
-          <div class="menu-item center-last"><div class="menu-top"><div class="menu-name">végétarienne</div><div class="menu-price">15,00 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 2 feuilles de vigne, 2 falafels, cornichon.</div></div>
+          <div class="menu-item"><div class="menu-top"><div class="menu-name">Poulet</div><div class="menu-price">17,50 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, poulet grillé.</div></div>
+          <div class="menu-item"><div class="menu-top"><div class="menu-name">Bœuf</div><div class="menu-price">17,50 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, bœuf grillé.</div></div>
+          <div class="menu-item center-last"><div class="menu-top"><div class="menu-name">Végétarienne</div><div class="menu-price">15,00 €</div></div><div class="menu-desc">Houmous, moutabal, fattouch, moussaka, 2 feuilles de vigne, 2 falafels, cornichon.</div></div>
         </div>
       </section>  
 
@@ -570,7 +747,7 @@
           <div class="menu-item"><div class="menu-top"><div class="menu-name">Miami</div><div class="menu-price">6,80 €</div></div><div class="menu-desc">Mangues, fraises, oranges.</div></div>
           <div class="menu-item"><div class="menu-top"><div class="menu-name">Berry Burst</div><div class="menu-price">6,80 €</div></div><div class="menu-desc">Framboises, fraises, canneberges.</div></div>
           <div class="menu-item"><div class="menu-top"><div class="menu-name">Boom</div><div class="menu-price">6,80 €</div></div><div class="menu-desc">Fraises, bananes, orange.</div></div>
-          <div class="menu-item"><div class="menu-top"><div class="menu-name">Passion</div><div class="menu-price">7,20 €</div></div><div class="menu-desc">Ananas, mangues, bananes, oranges.</div></div>
+          <div class="menu-item center-last"><div class="menu-top"><div class="menu-name">Passion</div><div class="menu-price">7,20 €</div></div><div class="menu-desc">Ananas, mangues, bananes, oranges.</div></div>
         </div>
       </section>
 
@@ -637,6 +814,12 @@
     <footer>
       © Chez Mestar — 152 Bd de la Croix-Rousse, 69001 Lyon
     </footer>
+  </div>
+
+  <div class="mobile-bar">
+    <a href="tel:0961223265">Appeler</a>
+    <a href="https://maps.google.com/?q=152+Bd+de+la+Croix-Rousse,+69001+Lyon" target="_blank">Itinéraire</a>
+    <a href="https://www.google.fr/maps/place/R%C3%A9gal+Caf%C3%A9/@45.7740855,4.8289151,689m/data=!3m2!1e3!5s0x47f4eb1d2837d521:0xa1fa07c42eddbe64!4m8!3m7!1s0x47f4eb002307cb91:0x9da28abfb6dd4a4e!8m2!3d45.7740855!4d4.8314954!9m1!1b1!16s%2Fg%2F11xkf1m4m2?entry=ttu&g_ep=EgoyMDI2MDQyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Avis</a>
   </div>
 </body>
 </html>
