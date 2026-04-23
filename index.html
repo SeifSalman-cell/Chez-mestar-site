@@ -3,54 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>Chez Mestar</title>
+
 <style>
 body {
   margin:0;
-  font-family: Arial;
-  background:#0a0a0a;
+  font-family: 'Arial', sans-serif;
+  background: #0a0a0a;
   color:white;
 }
+
 header {
-  padding:40px;
   text-align:center;
+  padding:60px 20px;
+  background: linear-gradient(180deg, #000, #111);
+}
+
+h1 {
+  color: gold;
+  font-size: 40px;
+}
+
+.section {
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.menu-item {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+  padding-bottom:10px;
+  border-bottom:1px solid #333;
+}
+
+.price {
+  color: gold;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:gold;
+  color:black;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+footer {
+  text-align:center;
+  padding:40px;
   background:#111;
 }
-h1 { color: gold; }
-.section {
-  padding:40px;
-}
-.menu-item {
-  margin-bottom:20px;
-}
-.price {
-  color:gold;
-}
 </style>
+
 </head>
 <body>
 
 <header>
 <h1>Chez Mestar</h1>
-<p>152 Bd de la Croix-Rousse, Lyon</p>
+<p>🇱🇧 Cuisine libanaise authentique</p>
+<p>📍 152 Bd de la Croix-Rousse, Lyon</p>
 <p>📞 09 61 22 32 65</p>
+<a class="btn" href="tel:0961223265">Appeler</a>
 </header>
 
 <div class="section">
 <h2>Nos spécialités</h2>
 
 <div class="menu-item">
-Falafel <span class="price">7.50€</span>
+<span>Falafel</span>
+<span class="price">7.50€</span>
 </div>
 
 <div class="menu-item">
-Poulet Tawook <span class="price">11€</span>
+<span>Poulet Tawook</span>
+<span class="price">11€</span>
 </div>
 
 <div class="menu-item">
-Shawarma Boeuf <span class="price">12€</span>
+<span>Shawarma Boeuf</span>
+<span class="price">12€</span>
 </div>
 
 </div>
+
+<div class="section">
+<h2>Pourquoi choisir Chez Mestar ?</h2>
+<p>✔️ Produits frais</p>
+<p>✔️ Cuisine maison</p>
+<p>✔️ Recettes libanaises authentiques</p>
+</div>
+
+<footer>
+<p>© Chez Mestar - Lyon</p>
+</footer>
 
 </body>
 </html>
