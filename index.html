@@ -7,78 +7,124 @@
   <style>
     * { box-sizing: border-box; }
 
+    :root{
+      --bg-main: #005387; /* proche RAL 5005 */
+      --bg-dark: #031521;
+      --card: rgba(8, 14, 20, 0.82);
+      --gold: #f3c623;
+      --gold-soft: rgba(243, 198, 35, 0.22);
+      --text: #ffffff;
+      --muted: #e8eef3;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      color: var(--text);
       background:
-        linear-gradient(135deg, #020202 0%, #07133b 45%, #2d2db3 100%);
-      color: #fff;
+        linear-gradient(135deg, var(--bg-dark) 0%, #04283e 25%, var(--bg-main) 100%);
     }
 
     .overlay {
-      background: rgba(0,0,0,0.55);
       min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.2));
     }
 
     header {
       text-align: center;
-      padding: 48px 20px 28px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+      padding: 38px 20px 24px;
+      border-bottom: 1px solid var(--gold-soft);
       background: rgba(0,0,0,0.35);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(8px);
-      z-index: 10;
+      backdrop-filter: blur(6px);
     }
 
     header h1 {
       margin: 0;
-      font-size: 42px;
-      color: #ffd700;
+      font-size: 54px;
+      color: var(--gold);
       letter-spacing: 1px;
     }
 
     header p {
       margin: 10px 0 0;
-      font-size: 18px;
-      color: #f5f5f5;
+      font-size: 22px;
+      color: var(--muted);
+      font-weight: 700;
     }
 
     .contact {
-      margin-top: 14px;
-      font-size: 17px;
+      margin-top: 12px;
+      font-size: 18px;
+      color: #fff;
     }
 
     .contact a {
-      color: #ffd700;
+      color: var(--gold);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    .hero-gallery {
+      max-width: 1200px;
+      margin: 28px auto 0;
+      padding: 0 20px 10px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px;
+    }
+
+    .hero-main,
+    .hero-side img,
+    .gallery-bottom img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+      display: block;
+    }
+
+    .hero-main {
+      height: 420px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-side img {
+      height: 201px;
     }
 
     .intro {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 20px 10px;
+      padding: 26px 20px 8px;
       text-align: center;
     }
 
     .intro h2 {
-      color: #ffd700;
-      font-size: 34px;
-      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 42px;
+      margin-bottom: 12px;
     }
 
     .intro p {
-      color: #f0f0f0;
-      max-width: 760px;
+      max-width: 840px;
       margin: 0 auto;
-      line-height: 1.7;
-      font-size: 17px;
+      line-height: 1.75;
+      font-size: 20px;
+      color: #fff;
     }
 
     .nav {
       max-width: 1100px;
-      margin: 24px auto 8px;
+      margin: 26px auto 4px;
       padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
@@ -89,33 +135,33 @@
     .nav a {
       text-decoration: none;
       color: #111;
-      background: #ffd700;
-      padding: 10px 16px;
+      background: var(--gold);
+      padding: 12px 18px;
       border-radius: 999px;
-      font-weight: bold;
-      font-size: 14px;
+      font-weight: 700;
+      font-size: 16px;
     }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 22px 20px 60px;
+      padding: 24px 20px 60px;
     }
 
     .section {
-      margin-top: 28px;
-      background: rgba(10, 10, 10, 0.68);
-      border: 1px solid rgba(255, 215, 0, 0.18);
-      border-radius: 22px;
+      margin-top: 30px;
+      background: rgba(3, 9, 15, 0.72);
+      border: 1px solid var(--gold-soft);
+      border-radius: 26px;
       padding: 26px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
     }
 
     .section h3 {
       margin: 0 0 18px;
-      color: #ffd700;
+      color: var(--gold);
       font-size: 30px;
-      border-bottom: 1px solid rgba(255,215,0,0.22);
+      border-bottom: 1px solid var(--gold-soft);
       padding-bottom: 10px;
     }
 
@@ -126,9 +172,9 @@
     }
 
     .item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
       padding: 16px;
     }
 
@@ -141,48 +187,142 @@
     }
 
     .item-name {
-      font-size: 19px;
-      font-weight: bold;
+      font-size: 18px;
+      font-weight: 700;
       color: #fff;
     }
 
     .price {
-      color: #ffd700;
-      font-weight: bold;
+      color: var(--gold);
+      font-weight: 700;
       white-space: nowrap;
       font-size: 18px;
     }
 
     .desc {
-      color: #ececec;
+      color: #f0f4f7;
       line-height: 1.6;
       font-size: 15px;
     }
 
     .extra {
-      color: #ffd700;
+      color: var(--gold);
       font-size: 14px;
       margin-top: 8px;
     }
 
+    .gallery-section {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      padding: 0 20px;
+    }
+
+    .gallery-card {
+      background: rgba(3, 9, 15, 0.72);
+      border: 1px solid var(--gold-soft);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .gallery-card h3 {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 30px;
+    }
+
+    .gallery-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-bottom img {
+      height: 240px;
+    }
+
+    .cta-box {
+      max-width: 1100px;
+      margin: 30px auto 0;
+      padding: 0 20px 50px;
+    }
+
+    .cta-inner {
+      background: rgba(3, 9, 15, 0.72);
+      border: 1px solid var(--gold-soft);
+      border-radius: 26px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .cta-inner h3 {
+      margin-top: 0;
+      color: var(--gold);
+      font-size: 32px;
+    }
+
+    .cta-inner p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .btn-call {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 999px;
+    }
+
     footer {
       text-align: center;
-      padding: 28px 20px 50px;
-      color: #ddd;
+      padding: 16px 20px 40px;
+      color: #edf2f7;
       font-size: 15px;
     }
 
-    @media (max-width: 760px) {
-      header h1 { font-size: 34px; }
-      .intro h2 { font-size: 28px; }
-      .section h3 { font-size: 25px; }
-      .grid { grid-template-columns: 1fr; }
-      .item-name { font-size: 18px; }
+    @media (max-width: 900px) {
+      .hero-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main {
+        height: 300px;
+      }
+
+      .hero-side img {
+        height: 220px;
+      }
+
+      .gallery-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-bottom img {
+        height: 220px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 40px; }
+      header p { font-size: 18px; }
+      .intro h2 { font-size: 34px; }
+      .intro p { font-size: 17px; }
+      .nav a { font-size: 14px; padding: 10px 14px; }
+      .hero-main { height: 220px; }
+      .hero-side img { height: 180px; }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
+
     <header>
       <h1>Chez Mestar</h1>
       <p>Menu libanais authentique</p>
@@ -192,12 +332,20 @@
       </div>
     </header>
 
+    <!-- PHOTOS PRINCIPALES EN HAUT -->
+    <section class="hero-gallery">
+      <img src="photo-hero.jpg" alt="Plat signature Chez Mestar" class="hero-main">
+      <div class="hero-side">
+        <img src="photo-2.jpg" alt="Spécialité libanaise Chez Mestar">
+        <img src="photo-3.jpg" alt="Assiette libanaise Chez Mestar">
+      </div>
+    </section>
+
     <section class="intro">
       <h2>Notre Menu</h2>
       <p>
-        Découvrez nos spécialités libanaises faites maison, préparées à partir
-        de produits frais : mezzés, galettes, assiettes, bowls, boissons,
-        cocktails et douceurs. :contentReference[oaicite:1]{index=1}
+        Découvrez nos spécialités libanaises faites maison, préparées à partir de
+        produits frais : mezzés, galettes, assiettes, bowls, boissons, cocktails et douceurs.
       </p>
     </section>
 
@@ -216,123 +364,48 @@
       <section class="section" id="mezzes">
         <h3>Mezzés</h3>
         <div class="grid">
-          <div class="item">
-            <div class="item-top"><div class="item-name">Tabbouleh</div><div class="price">7,50 €</div></div>
-            <div class="desc">Persil frais, tomates, boulgour fin, oignons, menthe, citron, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Fattouch</div><div class="price">7,00 €</div></div>
-            <div class="desc">Laitue, tomates, concombre, radis, poivrons, oignons verts, menthe, pain pita grillé, jus de citron, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Homous</div><div class="price">7,50 €</div></div>
-            <div class="desc">Purée de pois chiches, tahini, jus de citron, ail, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Moutabal</div><div class="price">7,50 €</div></div>
-            <div class="desc">Aubergines grillées, tahini, ail, jus de citron, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Moussaka</div><div class="price">7,50 €</div></div>
-            <div class="desc">Aubergines, pois chiches, tomates, oignons, ail, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Labneh</div><div class="price">5,50 €</div></div>
-            <div class="desc">Yaourt égoutté, huile d’olive, zaatar.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Feuilles de vigne</div><div class="price">7,50 €</div></div>
-            <div class="desc">6 feuilles de vigne farcies de riz, tomates, persil, oignons.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Homous Viande</div><div class="price">9,50 €</div></div>
-            <div class="desc">Houmous, viande, pignons.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Makdouss</div><div class="price">6,50 €</div></div>
-            <div class="desc">3 petites aubergines farcies aux noix, ail, piment, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Fatteh</div><div class="price">8,50 €</div></div>
-            <div class="desc">Bœuf, pain pita grillé, pois chiches, yaourt, tahini, ail, amandes, beurre.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Samoussas</div><div class="price">2,50 €/pièce</div></div>
-            <div class="desc">Fromage & épinards | Bœuf ou poulet.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Kebbé</div><div class="price">3,00 €/pièce</div></div>
-            <div class="desc">Végétarien | Bœuf.</div>
-          </div>
+          <div class="item"><div class="item-top"><div class="item-name">Tabbouleh</div><div class="price">7,50 €</div></div><div class="desc">Persil frais, tomates, boulgour fin, oignons, menthe, citron, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Fattouch</div><div class="price">7,00 €</div></div><div class="desc">Laitue, tomates, concombre, radis, poivrons, oignons verts, menthe, pain pita grillé, jus de citron, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Homous</div><div class="price">7,50 €</div></div><div class="desc">Purée de pois chiches, tahini, jus de citron, ail, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Moutabal</div><div class="price">7,50 €</div></div><div class="desc">Aubergines grillées, tahini, ail, jus de citron, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Moussaka</div><div class="price">7,50 €</div></div><div class="desc">Aubergines, pois chiches, tomates, oignons, ail, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Labneh</div><div class="price">5,50 €</div></div><div class="desc">Yaourt égoutté, huile d’olive, zaatar.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Feuilles de vigne</div><div class="price">7,50 €</div></div><div class="desc">6 feuilles de vigne farcies de riz, tomates, persil, oignons.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Homous Viande</div><div class="price">9,50 €</div></div><div class="desc">Houmous, viande, pignons.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Makdouss</div><div class="price">6,50 €</div></div><div class="desc">3 petites aubergines farcies aux noix, ail, piment, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Fatteh</div><div class="price">8,50 €</div></div><div class="desc">Bœuf, pain pita grillé, pois chiches, yaourt, tahini, ail, amandes, beurre.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Samoussas</div><div class="price">2,50 €/pièce</div></div><div class="desc">Fromage & épinards | Bœuf ou poulet.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Kebbé</div><div class="price">3,00 €/pièce</div></div><div class="desc">Végétarien | Bœuf.</div></div>
         </div>
       </section>
 
       <section class="section" id="galettes">
         <h3>Galettes</h3>
         <div class="grid">
-          <div class="item">
-            <div class="item-top"><div class="item-name">Fromage (Akkawi)</div><div class="price">6,00 €</div></div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Zaatar</div><div class="price">5,50 €</div></div>
-            <div class="desc">Thym libanais, huile d’olive.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Galette Bretonne</div><div class="price">8,00 €</div></div>
-            <div class="desc">Farine de sarrasin, omelette (2 œufs), fromage cheddar, tomates.</div>
-            <div class="extra">+ 1,50 € : avocat, épinards ou feta</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Poulet (Tawook)</div><div class="price">9,50 €</div></div>
-            <div class="desc">Poulet grillé, salade, sauce à l’ail, tomate, cornichon.</div>
-            <div class="extra">+ 2 € : ajout houmous ou moutabal</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Bœuf (Shawarma)</div><div class="price">10,00 €</div></div>
-            <div class="desc">Bœuf grillé, salade, tomate, cornichon, sauce tahini.</div>
-            <div class="extra">+ 2 € : ajout houmous ou moutabal</div>
-          </div>
+          <div class="item"><div class="item-top"><div class="item-name">Fromage (Akkawi)</div><div class="price">6,00 €</div></div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Zaatar</div><div class="price">5,50 €</div></div><div class="desc">Thym libanais, huile d’olive.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Galette Bretonne</div><div class="price">8,00 €</div></div><div class="desc">Farine de sarrasin, omelette (2 œufs), fromage cheddar, tomates.</div><div class="extra">+ 1,50 € : avocat, épinards ou feta</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Poulet (Tawook)</div><div class="price">9,50 €</div></div><div class="desc">Poulet grillé, salade, sauce à l’ail, tomate, cornichon.</div><div class="extra">+ 2 € : ajout houmous ou moutabal</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Bœuf (Shawarma)</div><div class="price">10,00 €</div></div><div class="desc">Bœuf grillé, salade, tomate, cornichon, sauce tahini.</div><div class="extra">+ 2 € : ajout houmous ou moutabal</div></div>
         </div>
       </section>
 
       <section class="section" id="assiettes">
         <h3>Assiettes</h3>
         <div class="grid">
-          <div class="item">
-            <div class="item-top"><div class="item-name">Poulet (Tawook)</div><div class="price">11,00 €</div></div>
-            <div class="desc">Salade composée, poulet grillé, sauce à l’ail, avocat.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Bœuf (Shawarma)</div><div class="price">12,00 €</div></div>
-            <div class="desc">Salade composée, bœuf grillé, sauce tahini, avocat.</div>
-            <div class="extra">+ 2 € : ajout houmous ou moutabal</div>
-          </div>
+          <div class="item"><div class="item-top"><div class="item-name">Poulet (Tawook)</div><div class="price">11,00 €</div></div><div class="desc">Salade composée, poulet grillé, sauce à l’ail, avocat.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Bœuf (Shawarma)</div><div class="price">12,00 €</div></div><div class="desc">Salade composée, bœuf grillé, sauce tahini, avocat.</div><div class="extra">+ 2 € : ajout houmous ou moutabal</div></div>
         </div>
       </section>
 
       <section class="section" id="bowls">
         <h3>Bowls</h3>
         <div class="grid">
-          <div class="item">
-            <div class="item-top"><div class="item-name">Végétarien</div><div class="price">11,00 €</div></div>
-            <div class="desc">Salade composée, 3 falafels, 2 feuilles de vigne, avocat.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Végétarienne (Vegan)</div><div class="price">15,00 €</div></div>
-            <div class="desc">Houmous, moutabal, fattouch, moussaka, 2 feuilles de vigne, 2 falafels, cornichon.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Végétarien</div><div class="price">7,50 €</div></div>
-            <div class="desc">Falafels, moutabal, homous, moussaka.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Poulet</div><div class="price">17,50 €</div></div>
-            <div class="desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, poulet grillé.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Bœuf</div><div class="price">17,50 €</div></div>
-            <div class="desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, bœuf grillé.</div>
-          </div>
+          <div class="item"><div class="item-top"><div class="item-name">Végétarien</div><div class="price">11,00 €</div></div><div class="desc">Salade composée, 3 falafels, 2 feuilles de vigne, avocat.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Végétarienne (Vegan)</div><div class="price">15,00 €</div></div><div class="desc">Houmous, moutabal, fattouch, moussaka, 2 feuilles de vigne, 2 falafels, cornichon.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Végétarien</div><div class="price">7,50 €</div></div><div class="desc">Falafels, moutabal, homous, moussaka.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Poulet</div><div class="price">17,50 €</div></div><div class="desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, poulet grillé.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Bœuf</div><div class="price">17,50 €</div></div><div class="desc">Houmous, moutabal, fattouch, moussaka, 1 feuille de vigne, 1 falafel, bœuf grillé.</div></div>
         </div>
       </section>
 
@@ -366,14 +439,8 @@
       <section class="section" id="cocktails">
         <h3>Cocktails Maison</h3>
         <div class="grid">
-          <div class="item">
-            <div class="item-top"><div class="item-name">À La Libanaise</div><div class="price">9,50 €</div></div>
-            <div class="desc">Mélange de fruits frais de saison, jus naturel, crème fouettée, miel et éclats de noix ou amandes.</div>
-          </div>
-          <div class="item">
-            <div class="item-top"><div class="item-name">Avocat</div><div class="price">11,00 €</div></div>
-            <div class="desc">Avocat frais, lait, banane, crème fouettée, miel et éclats de noix ou amandes.</div>
-          </div>
+          <div class="item"><div class="item-top"><div class="item-name">À La Libanaise</div><div class="price">9,50 €</div></div><div class="desc">Mélange de fruits frais de saison, jus naturel, crème fouettée, miel et éclats de noix ou amandes.</div></div>
+          <div class="item"><div class="item-top"><div class="item-name">Avocat</div><div class="price">11,00 €</div></div><div class="desc">Avocat frais, lait, banane, crème fouettée, miel et éclats de noix ou amandes.</div></div>
         </div>
       </section>
 
@@ -397,9 +464,33 @@
       </section>
     </main>
 
+    <!-- GALERIE EN BAS -->
+    <section class="gallery-section">
+      <div class="gallery-card">
+        <h3>Galerie</h3>
+        <div class="gallery-bottom">
+          <img src="photo-4.jpg" alt="Plat libanais">
+          <img src="photo-5.jpg" alt="Dessert libanais">
+          <img src="photo-6.jpg" alt="Boisson maison">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-box">
+      <div class="cta-inner">
+        <h3>Envie de goûter nos spécialités ?</h3>
+        <p>
+          Retrouvez Chez Mestar à la Croix-Rousse et profitez d’une cuisine libanaise
+          généreuse, maison et pleine de saveurs.
+        </p>
+        <a class="btn-call" href="tel:0961223265">Appeler maintenant</a>
+      </div>
+    </section>
+
     <footer>
-      Cuisine libanaise authentique, entièrement faite maison à partir de produits frais. :contentReference[oaicite:2]{index=2}
+      Cuisine libanaise authentique, entièrement faite maison à partir de produits frais.
     </footer>
+
   </div>
 </body>
 </html>
